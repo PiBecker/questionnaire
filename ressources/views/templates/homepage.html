@@ -1,0 +1,17 @@
+{% extends 'app.html' %}
+
+  {% block content %}
+    <h1 class="text-center text-uppercase">Bienvenue</h1>
+    <div class="jumbotron">
+      <h3 class="text-center">Questionnaire</h3>
+      <br/>
+      <div class="text-center">
+        {% if (auth.check and auth.user) %}
+
+        {% else %}
+          <a href="{{ path_for('auth.signin') }}"><button class="btn btn-primary">Se connecter</button></a>
+          <a href="{{ path_for('auth.signup') }}"><button class="btn btn-default">Inscription</button></a>
+        {% endif %}
+      </div>
+    </div>
+{% endblock %}

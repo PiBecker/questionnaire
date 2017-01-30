@@ -1,0 +1,11 @@
+{% extends 'app.html' %}
+  {% block content %}
+      <div class="col-md-4">
+        <h3>Vos Informations</h3><br>
+        <div class="col-md-12">
+          <p><strong>Pseudo : </strong>{{ auth.user.name }}</p>
+          <p><strong>Email : </strong>{{ auth.user.email }}</p>
+          <p><strong><a href="{{ path_for('auth.password.change') }}">changer mon mot de passe</a></p>
+        </div> 
+      </div>
+{% endblock %}
